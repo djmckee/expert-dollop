@@ -1,6 +1,7 @@
 /**
  * Created by djmckee on 03/11/2016.
  */
+
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.DefaultHandler;
@@ -30,13 +31,12 @@ public class JettyServer {
         ServletHolder indexHolder = new ServletHolder(new IndexServlet());
         context.addServlet(indexHolder, "/index");
 
+
         try {
             server.start();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-
-
 
 
 
