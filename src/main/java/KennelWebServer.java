@@ -20,7 +20,7 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JettyServer {
+public class KennelWebServer {
     public static void main(String[] args) throws URISyntaxException {
         //Firstly craete a Kennel object using the factory class method
         Kennel dogHouse = KennelFactory.initialiseKennel();
@@ -40,7 +40,7 @@ public class JettyServer {
 
         WebAppContext context = new WebAppContext();
         context.setContextPath("/");
-        context.setResourceBase(JettyServer.class.getResource("/webapp/").toURI().toASCIIString());
+        context.setResourceBase(KennelWebServer.class.getResource("/webapp/").toURI().toASCIIString());
         final ContainerInitializer initializer = new ContainerInitializer(new JettyJasperInitializer(), null);
         List<ContainerInitializer> initializers = new ArrayList<ContainerInitializer>() {{
             add(initializer);
