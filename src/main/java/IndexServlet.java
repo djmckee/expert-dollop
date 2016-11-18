@@ -1,11 +1,12 @@
 /**
  * Created by djmckee on 04/11/2016.
  */
-import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 public class IndexServlet extends HttpServlet {
 
@@ -47,7 +48,7 @@ public class IndexServlet extends HttpServlet {
                 "https://media.giphy.com/media/o0vwzuFwCGAFO/giphy.gif"
         };
 
-        int randomNumber =  (int)(Math.random() * gifUrls.length);
+        int randomNumber = (int) (Math.random() * gifUrls.length);
 
         String gifUrl = gifUrls[randomNumber];
 
@@ -55,6 +56,6 @@ public class IndexServlet extends HttpServlet {
             catGifsHtml = "<img alt=\"Awesome cat gif\" src=\"" + gifUrl + "\" />";
         }
 
-        response.getWriter().print("<html><body>Your username is: " + username  + "<br/><br/>" + catGifsHtml + "<br/></body></html>");
+        response.getWriter().print("<html><body>Your username is: " + username + "<br/><br/>" + catGifsHtml + "<br/></body></html>");
     }
 }
