@@ -1,3 +1,4 @@
+<%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.util.List" %>
 
@@ -104,8 +105,12 @@
     <br/>
 
     <div class="well">
-        <a href="/index" class="btn btn-default">Refresh</a>
+        <a href="/index" class="btn btn-primary"><i class="fa fa-refresh" aria-hidden="true"></i> Refresh</a>
     </div>
+
+    <footer>
+        &copy; Copyright <%= new SimpleDateFormat("yyyy").format(new Date()) %> D-Dawg Kennels, all puppers reserved.
+    </footer>
 </div>
 </body>
 </html>
