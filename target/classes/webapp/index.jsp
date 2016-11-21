@@ -115,7 +115,7 @@
         <a href="/index" class="btn btn-primary"><i class="fa fa-refresh" aria-hidden="true"></i> Refresh</a>
     </div>
 
-    <footer>
+    <footer style="margin-bottom: 36px;">
         &copy; Copyright <%= new SimpleDateFormat("yyyy").format(new Date()) %> D-Dawg Kennels, all puppers reserved.
     </footer>
 </div>
