@@ -1,5 +1,6 @@
 IndexServlet.class
 KennelWebServer$1.class
-CounterJspServlet.class
-main/Counter.class
+PasswordManager.class
+KennelManager.class
+Action.class
 KennelWebServer.class
