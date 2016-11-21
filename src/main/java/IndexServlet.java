@@ -175,8 +175,6 @@ public class IndexServlet extends HttpServlet {
 
         if (action == Action.Checkin) {
             // Attempt a checkin...
-
-
             Pen bookedPen = kennel.bookPen(dogSize, dogName);
 
             if (bookedPen != null) {

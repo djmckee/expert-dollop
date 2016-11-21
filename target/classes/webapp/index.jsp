@@ -93,6 +93,13 @@
                     </div>
                 </div>
 
+                <div class="form-group">
+
+                    <label for="password">Pupper password:</label>
+                    <input type="password" class="form-control" id="password" name="password" required
+                           placeholder="Your pupper's top secret password!">
+                </div>
+
                 <button type="submit" class="btn-success btn"><i class="fa fa-paw" aria-hidden="true"></i> Submit
                 </button>
                 <br>
