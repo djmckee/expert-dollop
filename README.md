@@ -14,5 +14,7 @@ As well as the booking function, this implementation includes the following extr
 
 ### External libraries used
 As well as the libraries specified in the assignment, I used the following 3rd pary libraries:
-- Bootstrap
-- jQuery
+- [Bootstrap](https://getbootstrap.com/)
+- [jQuery](https://jquery.com/)
+- [FontAwesome](http://fontawesome.io/)
+- [GIFs from Giphy](https://giphy.com)
