@@ -1,3 +1,4 @@
+<%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.util.List" %>
 
@@ -108,7 +109,7 @@
     </div>
 
     <footer>
-       &copy; Copyright <%= new java.text.SimpleDateFormat("yyyy").format(new java.util.Date()) %> D-Dawg Kennels, all puppers reserved.
+        &copy; Copyright <%= new SimpleDateFormat("yyyy").format(new Date()) %> D-Dawg Kennels, all puppers reserved.
     </footer>
 </div>
 </body>

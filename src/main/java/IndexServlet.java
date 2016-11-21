@@ -95,7 +95,7 @@ public class IndexServlet extends HttpServlet {
 
     /**
      * This method handles a POST of the dog kennel booking form described in the index.jsp document.
-     * On succesful checkin/checkout, it renders a HTML success message.
+     * On successful checkin/checkout, it renders a HTML success message.
      * On failed checkin/checkout, it renders a helpful failure message in HTML, and returns a HTTP
      * code of 400, indicating a bad request to the user.
      *
