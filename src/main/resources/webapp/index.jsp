@@ -15,6 +15,12 @@
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
@@ -48,48 +54,58 @@
     </table>
 
 
-    <h3><i class="fa fa-id-badge" aria-hidden="true"></i> Pen booking</h3>
+    <div class="panel panel-default">
+        <div class="panel-heading"><h3><i class="fa fa-id-badge" aria-hidden="true"></i> Pen booking</h3></div>
+        <div class="panel-body">
+            <form action="#" method="POST" style="max-width: 320px;">
+                <div class="form-group">
 
-    <form action="#" method="POST" style="max-width: 320px;">
-        <div class="form-group">
+                    <label for="name">Dog Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" required
+                           placeholder="Your pupper's name!">
+                </div>
 
-            <label for="name">Dog Name:</label>
-            <input type="text" class="form-control" id="name" name="name" required placeholder="Your pupper's name!">
+                <div class="form-group">
+                    <label for="size">Dog size:</label>
+
+                    <div class="radio">
+                        <label><input type="radio" id="size" name="size" value="small" checked="checked" required>Small</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="size" value="medium">Medium</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="size" value="giant">Giant!</label>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="status">Action:</label>
+
+                    <div class="radio">
+                        <label><input type="radio" id="status" name="status" value="checkin" checked="checked" required>Check
+                            in</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="status" value="checkout">Check out</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-success btn"><i class="fa fa-paw" aria-hidden="true"></i> Submit
+                </button>
+                <br>
+            </form>
         </div>
-
-        <div class="form-group">
-            <label for="size">Dog size:</label>
-
-            <div class="radio">
-                <label><input type="radio" id="size" name="size" value="small" checked="checked" required>Small</label>
-            </div>
-            <div class="radio">
-                <label><input type="radio" name="size" value="medium">Medium</label>
-            </div>
-            <div class="radio">
-                <label><input type="radio" name="size" value="giant">Giant!</label>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="status">Action:</label>
-
-            <div class="radio">
-                <label><input type="radio" id="status" name="status" value="checkin" checked="checked" required>Check in</label>
-            </div>
-            <div class="radio">
-                <label><input type="radio" name="status" value="checkout">Check out</label>
-            </div>
-        </div>
-
-        <button type="submit" class="btn-success btn"><i class="fa fa-paw" aria-hidden="true"></i> Submit</button>
-        <br>
-    </form>
+    </div>
 
 
     <br/>
     <br/>
-    <a href="/index" class="btn btn-default">Refresh</a>
+
+    <div class="well">
+        <a href="/index" class="btn btn-default">Refresh</a>
+    </div>
 </div>
 </body>
 </html>

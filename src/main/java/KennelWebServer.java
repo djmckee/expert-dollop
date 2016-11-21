@@ -16,27 +16,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class KennelWebServer {
-    public static void main(String[] args) throws URISyntaxException {
-        /*
-        //Firstly craete a Kennel object using the factory class method
-        Kennel dogHouse = KennelFactory.initialiseKennel();
-        //Use the report to see how this object is structured
-        System.out.println(KennelReport.generateReport(dogHouse));
-        //Check a medium sized dog called Bertie into a pen
-        dogHouse.bookPen(DogSize.SMALL, "Bertie");
-        dogHouse.bookPen(DogSize.GIANT, "Hulk");
-        //Use the report to check the updated status
-        System.out.println(KennelReport.generateReport(dogHouse));
-        //Check Bertie out
-        dogHouse.checkout("Bertie");
-        //Look at the report to see he has left
-        System.out.println(KennelReport.generateReport(dogHouse));
-        */
+    private static final int PORT = 8080;
 
+    public static void main(String[] args) throws URISyntaxException {
         // Ensure the singleton exists.
         KennelManager kennelManager = KennelManager.getInstance();
 
-        Server server = new Server(8080);
+        Server server = new Server(PORT);
 
         WebAppContext context = new WebAppContext();
         context.setContextPath("/");
@@ -51,12 +37,14 @@ public class KennelWebServer {
 
         ServletHolder indexDefault = new ServletHolder("index", IndexServlet.class);
         context.addServlet(indexDefault, "/index");
+        context.addServlet(indexDefault, "/");
 
         server.setHandler(context);
 
 
         try {
             server.start();
+            System.out.println("KennelWebServer running on http://0.0.0.0:" + PORT);
         } catch (Exception ex) {
             ex.printStackTrace();
         }

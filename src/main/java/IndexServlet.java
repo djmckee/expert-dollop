@@ -21,6 +21,27 @@ enum Action {
 
 public class IndexServlet extends HttpServlet {
 
+    private static final String HEADER_CONSTANT = "<head>\n" +
+            "    <title>D-Dawg Kennels</title>\n" +
+            "\n" +
+            "    <!-- Latest compiled and minified CSS -->\n" +
+            "    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\"\n" +
+            "          integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">\n" +
+            "\n" +
+            "    <!-- Optional theme -->\n" +
+            "    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css\"\n" +
+            "          integrity=\"sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp\" crossorigin=\"anonymous\">\n" +
+            "    <link href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\"\n" +
+            "          integrity=\"sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN\" crossorigin=\"anonymous\">\n" +
+            "   <script\n" +
+            "  src=\"https://code.jquery.com/jquery-2.2.4.min.js\"\n" +
+            "  integrity=\"sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=\"\n" +
+            "  crossorigin=\"anonymous\"></script> <!-- Latest compiled and minified JavaScript -->\n" +
+            "    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"\n" +
+            "            integrity=\"sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa\"\n" +
+            "            crossorigin=\"anonymous\"></script>\n" +
+            "</head>";
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         KennelManager kennelManager = KennelManager.getInstance();
@@ -142,7 +163,7 @@ public class IndexServlet extends HttpServlet {
         response.setStatus(400);
 
         // Error GIF: https://media.giphy.com/media/14bzmmBo252Zzi/giphy.gif
-        response.getWriter().print("<html><body><h2>Something went wrong!</h2><p>" + errorText + "</p><br/> <img height=\"120\" alt=\"Awesome doge gif\" src=\"https://media.giphy.com/media/14bzmmBo252Zzi/giphy.gif\" /> </body></html>");
+        response.getWriter().print("<html>" + HEADER_CONSTANT + "<body class=\"container\"><h2><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i>\n Something went wrong!</h2><p>" + errorText + "</p><br/><br/><a href=\"/index\"  class=\"btn btn-success\">Back to booking list</a><br/><br/><br/>  <img height=\"120\" alt=\"Awesome doge gif\" src=\"https://media.giphy.com/media/14bzmmBo252Zzi/giphy.gif\" /> </body></html>");
 
 
     }
@@ -162,7 +183,7 @@ public class IndexServlet extends HttpServlet {
 
         String gifUrl = gifUrls[randomNumber];
 
-        response.getWriter().print("<html><body><h2>Congratulations!</h2><p>" + dogName + " has been " + actionText + " to D-Dawg's kennels successfully. Have a pupper-filled day!</p><br/><a href=\"/index\"  class=\"btn btn-success\">Back to booking list</a><br/><br/><br/> <img height=\"200\" alt=\"Awesome doge gif\" src=\"" + gifUrl + "\" /> </body></html>");
+        response.getWriter().print("<html>" + HEADER_CONSTANT + "<body class=\"container\"><h2><i class=\"fa fa-paw\" aria-hidden=\"true\"></i> Congratulations!</h2><p>" + dogName + " has been " + actionText + " to D-Dawg's kennels successfully. Have a pupper-filled day!</p><br/><a href=\"/index\"  class=\"btn btn-success\">Back to booking list</a><br/><br/><br/> <img height=\"200\" alt=\"Awesome doge gif\" src=\"" + gifUrl + "\" /> </body></html>");
 
     }
 
