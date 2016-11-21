@@ -1,5 +1,7 @@
 /**
- * Created by djmckee on 03/11/2016.
+ * An implementation of the KennelManager system using the Jetty Web Server and JSP Servlets, for CSC3422.
+ *
+ * Created by Dylan McKee on 03/11/2016.
  */
 
 import org.apache.tomcat.InstanceManager;

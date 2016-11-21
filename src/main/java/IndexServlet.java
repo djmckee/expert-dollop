@@ -1,5 +1,8 @@
 /**
- * Created by djmckee on 04/11/2016.
+ * An implementation of the Jetty Servlet interface to handle POST and GET requests via JSP for the kennel management
+ * system.
+ *
+ * Created by Dylan McKee on 04/11/2016.
  */
 
 import uk.ac.ncl.csc3422.kennelbooking.DogSize;
@@ -120,6 +123,22 @@ public class IndexServlet extends HttpServlet {
             return;
         }
 
+        String password = request.getParameter("password");
+
+        if (password == null || password.length() == 0) {
+            // Name required.
+            handleError(response, "A password is required!");
+            return;
+        }
+
+        // Is the desired password strong enough?
+        if (!PasswordManager.getInstance().isPasswordStrongEnough(password)) {
+            // Password too weak; error.
+            handleError(response, "Your password is too weak to protect your precious pupper! Please ensure it is over 6 chars in length and not a commonly used dictionary word");
+            return;
+        }
+
+
         Action action;
         String actionString = request.getParameter("status");
 
@@ -157,11 +176,16 @@ public class IndexServlet extends HttpServlet {
         if (action == Action.Checkin) {
             // Attempt a checkin...
 
+
             Pen bookedPen = kennel.bookPen(dogSize, dogName);
 
             if (bookedPen != null) {
                 // Success
                 actionName = "checked in to pen " + bookedPen.getPenNumber();
+
+                // Save password...
+                PasswordManager.getInstance().store(dogName, password);
+
                 renderSuccess(response, dogName, actionName);
                 return;
 
@@ -173,8 +197,21 @@ public class IndexServlet extends HttpServlet {
         } else if (action == Action.Checkout) {
             // Attempt check out...
 
+            // Does the password match up?
+            boolean passwordValid = PasswordManager.getInstance().checkPassword(dogName, password);
+
+            if (!passwordValid) {
+                // Error and don't checkout.
+                handleError(response, "Incorrect password. Please check your password and try again.");
+                return;
+            }
+
             if (kennel.checkout(dogName)) {
                 renderSuccess(response, dogName, actionName);
+
+                // Remove old password entry to clear up memory
+                PasswordManager.getInstance().unstore(dogName);
+
                 return;
 
             } else {
