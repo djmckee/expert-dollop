@@ -1,10 +1,3 @@
-/**
- * An implementation of the Jetty Servlet interface to handle POST and GET requests via JSP for the kennel management
- * system.
- *
- * Created by Dylan McKee on 04/11/2016.
- */
-
 import uk.ac.ncl.csc3422.kennelbooking.DogSize;
 import uk.ac.ncl.csc3422.kennelbooking.Kennel;
 import uk.ac.ncl.csc3422.kennelbooking.Pen;
@@ -26,6 +19,12 @@ enum Action {
     Checkout
 }
 
+/**
+ * An implementation of the Jetty Servlet interface to handle POST and GET requests via JSP for the kennel management
+ * system.
+ * <p>
+ * Created by Dylan McKee on 04/11/2016.
+ */
 public class IndexServlet extends HttpServlet {
 
     /**
@@ -34,12 +33,8 @@ public class IndexServlet extends HttpServlet {
      */
     private static final String HEADER_CONSTANT = "<head>\n" +
             "    <title>D-Dawg Kennels</title>\n" +
-            "\n" +
-            "    <!-- Latest compiled and minified CSS -->\n" +
             "    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\"\n" +
             "          integrity=\"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u\" crossorigin=\"anonymous\">\n" +
-            "\n" +
-            "    <!-- Optional theme -->\n" +
             "    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css\"\n" +
             "          integrity=\"sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp\" crossorigin=\"anonymous\">\n" +
             "    <link href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\" rel=\"stylesheet\"\n" +
@@ -50,8 +45,7 @@ public class IndexServlet extends HttpServlet {
             "  crossorigin=\"anonymous\"></script> <!-- Latest compiled and minified JavaScript -->\n" +
             "    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"\n" +
             "            integrity=\"sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa\"\n" +
-            "            crossorigin=\"anonymous\"></script>\n" +
-            "</head>";
+            "            crossorigin=\"anonymous\"></script></head>";
 
     /**
      * This method renders a JSP web-page populated with current kennel information, as requested in the assignment.

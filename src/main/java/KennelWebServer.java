@@ -1,9 +1,3 @@
-/**
- * An implementation of the KennelManager system using the Jetty Web Server and JSP Servlets, for CSC3422.
- *
- * Created by Dylan McKee on 03/11/2016.
- */
-
 import org.apache.tomcat.InstanceManager;
 import org.apache.tomcat.SimpleInstanceManager;
 import org.eclipse.jetty.annotations.ServletContainerInitializersStarter;
@@ -17,6 +11,11 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * An implementation of the KennelManager system using the Jetty Web Server and JSP Servlets, for CSC3422.
+ * <p>
+ * Created by Dylan McKee on 03/11/2016.
+ */
 public class KennelWebServer {
     private static final int PORT = 8080;
 
