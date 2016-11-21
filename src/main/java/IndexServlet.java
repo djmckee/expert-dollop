@@ -14,6 +14,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * An enum to hold in the two types of action that can currently be performed by the system -
+ * a check in and a check out.
+ */
 enum Action {
     Checkin,
     Checkout
