@@ -116,7 +116,7 @@
     </div>
 
     <footer style="margin-bottom: 36px;">
-        &copy; Copyright <%= new SimpleDateFormat("yyyy").format(new Date()) %> The Pupper Palace, all pups reserved.
+        &copy; Copyright <%= new SimpleDateFormat("yyyy").format(new Date()) %> The Pupper Palace, all doggos reserved.
     </footer>
 </div>
 </body>
