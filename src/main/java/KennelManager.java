@@ -3,7 +3,7 @@ import uk.ac.ncl.csc3422.kennelbooking.KennelFactory;
 
 /**
  * A singleton created to manage the shared Kennel instance for our dog kennel web app.
- *
+ * <p>
  * Created by Dylan McKee on 18/11/2016.
  */
 public class KennelManager {
@@ -36,6 +36,7 @@ public class KennelManager {
 
     /**
      * Gets the shared kennel instance, provides better level of abstraction than exposing instance var.
+     *
      * @return the app-wide Kennel instance.
      */
     public Kennel getKennel() {

@@ -18,7 +18,7 @@ import java.util.Map;
  * This class exists to provide abstraction between the in-memory password storage map and the act of password storage, so the storage
  * mechanism could be easily changed to a database, a key value store such as Redis, or something generally
  * more appropriately production ready.
- *
+ * <p>
  * Created by Dylan McKee on 21/11/2016.
  */
 public class PasswordManager {
@@ -57,6 +57,7 @@ public class PasswordManager {
 
     /**
      * Gets singleton instance.
+     *
      * @return the PasswordManager singleton instance.
      */
     public static PasswordManager getInstance() {
@@ -66,6 +67,7 @@ public class PasswordManager {
     /**
      * A private method to perform SHA256 hashing.
      * Implementation modified from https://stackoverflow.com/questions/3103652/hash-string-via-sha-256-in-java
+     *
      * @param password the password to be hashed.
      * @return the SHA256 string of the hashed passsword.
      */
@@ -91,7 +93,8 @@ public class PasswordManager {
 
     /**
      * Stores the desired password, as a SHA256 hash, in an in memory password store, associated with the dog name.
-     * @param dogName the dog's name.
+     *
+     * @param dogName  the dog's name.
      * @param password the password to store, as a plaintext string.
      */
     public void store(String dogName, String password) {
@@ -102,6 +105,7 @@ public class PasswordManager {
 
     /**
      * Removes the previously stored password for the dog in the in-memory store (by replacing it with a null value).
+     *
      * @param dogName the dog's name.
      */
     public void unstore(String dogName) {
@@ -110,7 +114,8 @@ public class PasswordManager {
 
     /**
      * Checks the password entered against the password stored for a given dog.
-     * @param dogName the dog's name.
+     *
+     * @param dogName           the dog's name.
      * @param attemptedPassword the password entered by the user for the dog, in plaintext.
      * @return true if the password is correct - otherwise false.
      */

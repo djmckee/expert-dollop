@@ -95,13 +95,13 @@ public class IndexServlet extends HttpServlet {
      * On successful checkin/checkout, it renders a HTML success message.
      * On failed checkin/checkout, it renders a helpful failure message in HTML, and returns a HTTP
      * code of 400, indicating a bad request to the user.
-     *
+     * <p>
      * Full server-side validation of all parameters is performed as much as possible for upmost security.
      *
-     * @param request the HTTP POST request.
+     * @param request  the HTTP POST request.
      * @param response the HTTP response document.
      * @throws ServletException an exception that could occur, never under normal use though.
-     * @throws IOException an exception that could occur, never under normal use though.
+     * @throws IOException      an exception that could occur, never under normal use though.
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -220,7 +220,7 @@ public class IndexServlet extends HttpServlet {
      * A convenience method to render a HTML error page with a HTTP stats code of 400, in case of error.
      * This method reduces code duplication.
      *
-     * @param response the error page HTML.
+     * @param response  the error page HTML.
      * @param errorText the error description string (human readable).
      * @throws IOException an exception that could occur, never under normal use though.
      */
@@ -238,8 +238,8 @@ public class IndexServlet extends HttpServlet {
      * A convenience method to render a HTML success page informing the user of what actions have successfully been performed.
      * This method reduces code duplication.
      *
-     * @param response the success page HTML.
-     * @param dogName the name of the dog that has been successfully checked in or out of the kennels, for use in the success page.
+     * @param response   the success page HTML.
+     * @param dogName    the name of the dog that has been successfully checked in or out of the kennels, for use in the success page.
      * @param actionText the action verb of the successful request (i.e. 'checked in' or 'checked out')
      * @throws IOException an exception that could occur, never under normal use though.
      */
