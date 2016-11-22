@@ -116,7 +116,7 @@
     </div>
 
     <footer style="margin-bottom: 36px;">
-        &copy; Copyright <%= new SimpleDateFormat("yyyy").format(new Date()) %> D-Dawg Kennels, all puppers reserved.
+        &copy; Copyright <%= new SimpleDateFormat("yyyy").format(new Date()) %> D-Dawg Kennels, all pups reserved.
     </footer>
 </div>
 </body>

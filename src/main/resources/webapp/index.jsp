@@ -5,7 +5,7 @@
 
 <html>
 <head>
-    <title>D-Dawg Kennels</title>
+    <title>The Pupper Palace</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -29,10 +29,10 @@
 </head>
 <body>
 <div class="container">
-    <h1><i class="fa fa-paw" aria-hidden="true"></i> D-Dawg Kennels</h1>
-    <h4>Welcome to D-Dawg Kennels:</h4>
+    <h1><i class="fa fa-paw" aria-hidden="true"></i> The Pupper Palace</h1>
+    <h4>Welcome to The Pupper Palace:</h4>
 
-    <p><i class="fa fa-clock-o" aria-hidden="true"></i> Current time at D-Dawg kennels: <strong><%= new Date() %>
+    <p><i class="fa fa-clock-o" aria-hidden="true"></i> Current time at The Pupper Palace: <strong><%= new Date() %>
     </strong></p>
 
     <h3><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Booking status</h3>
@@ -116,7 +116,7 @@
     </div>
 
     <footer style="margin-bottom: 36px;">
-        &copy; Copyright <%= new SimpleDateFormat("yyyy").format(new Date()) %> D-Dawg Kennels, all pups reserved.
+        &copy; Copyright <%= new SimpleDateFormat("yyyy").format(new Date()) %> The Pupper Palace, all pups reserved.
     </footer>
 </div>
 </body>
